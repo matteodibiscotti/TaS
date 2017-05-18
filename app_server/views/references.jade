@@ -1,43 +1,37 @@
 extends layout
-		.page
-			.refContent
-				.refBlock
-					h1 About the authors
-					p.refBlockBody(style='text-align:center')
-						| Matthew Lowman is a student at UWA studying in the second year
-						| of a Master of Information Technology.  I also work as an IT consultant for a global service integration company.
-					p.refBlockBody(style='text-align:center')
-						| Kit Buckley is a final year student at UWA studying a Master of Information Technology.
-					p.refBlockBody(style='text-align:center')
-						| We have built this site from the ground up.  If you wish to contact us
-						| in regards to the content or design of the website, please email me us at 10420746@student.uwa.edu.au (Kit)
-						| or 21944708@student.uwa.edu.au (Matthew).
-				.refBlock
-					h1(style='text-align:center') References
-					ul
-						li.refListSpace
-							| https://www.w3schools.com/js/tryit.asp?filename=
-							br
-							| tryjs_timing_clock
-						li.refListSpace
-							| http://www.istockphoto.com/au/vector/builders-constructors-workers-at-construction-sites-gm515060804-88387011
-						li
-							| http://www.allmach.com.au/sites/default/files/styles/blog_1140x642/public/9.png?itok=z1i3eUMY
-						li https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_select_options3
-						li
-							| https://webdesign.tutsplus.com/tutorials/building-responsive-forms-with-flexbox--cms-26767
-						li
-							| http://codepen.io/noahblon/post/practical-guide-to-flexbox-dont-forget-about-flex-shrink
-						li https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock
-						li https://www.w3schools.com/css/css3_flexbox.asp
-						li https://www.w3schools.com/css/css3_gradients.asp
-						li http://www.99colors.net
-						li https://www.w3schools.com/tags/tag_optgroup.asp
-						li https://www.w3schools.com/js/js_validation_api.asp
-						li https://www.regexr.com
-			footer#footerContent.footer
-		script(src='NavBarRef.js')
-		script(src='HeadFoot.js')
+
+block content
+	#banner.page-header
+		.row
+			.col-md-6.col-sm-12
+				h1 About the authors
+				p
+					| Matthew Lowman is a student at UWA studying in the second year
+					| of a Master of Information Technology.  I also work as an IT consultant for a global service integration company.
+				p
+					| Kit Buckley is a final year student at UWA studying a Master of Information Technology.
+				p
+					| We have built this site from the ground up.  If you wish to contact us
+					| in regards to the content or design of the website, please email me us at 10420746@student.uwa.edu.au (Kit)
+					| or 21944708@student.uwa.edu.au (Matthew).
+
+			.col-md-6.col-sm-12
+				h1 References
+				ul
+					li: "https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock"
+					li: "http://www.istockphoto.com/au/vector/builders-constructors-workers-at-construction-sites-gm515060804-88387011"
+					li: "http://www.allmach.com.au/sites/default/files/styles/blog_1140x642/public/9.png?itok=z1i3eUMY"
+					li: "https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_select_options3"
+					li: "https://webdesign.tutsplus.com/tutorials/building-responsive-forms-with-flexbox--cms-26767"
+					li: "http://codepen.io/noahblon/post/practical-guide-to-flexbox-dont-forget-about-flex-shrink"
+					li: "https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock"
+					li: "https://www.w3schools.com/css/css3_flexbox.asp"
+					li: "https://www.w3schools.com/css/css3_gradients.asp"
+					li: "http://www.99colors.net"
+					li: "https://www.w3schools.com/tags/tag_optgroup.asp"
+					li: "https://www.w3schools.com/js/js_validation_api.asp"
+					li: "https://www.regexr.com"
+
 //
 	https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock
 	http://www.istockphoto.com/au/vector/builders-constructors-workers-at-construction-sites-gm515060804-88387011
