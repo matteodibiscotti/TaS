@@ -10,5 +10,5 @@ res.render('index', { title: 'References' });
 
 /* GET welcome page */
 module.exports.welcome = function(req, res){
-res.render('index', { title: 'Welcome' });
+res.render('welcome', { title: 'Welcome' });
 };
