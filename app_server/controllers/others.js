@@ -5,7 +5,7 @@ res.render('index', { title: 'Login' });
 
 /* GET reference page */
 module.exports.references = function(req, res){
-res.render('index', { title: 'References' });
+res.render('references', { title: 'References' });
 };
 
 /* GET welcome page */
