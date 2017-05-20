@@ -6,3 +6,31 @@ block content
   .row
     .col-md-6.col-sm-12
       h1 Search to find a tradesman who can carry out your job!
+      form#TradieSearch
+        table
+          tr
+            td
+              label
+                | Tradie's username:
+                td
+                  input#userName(type='text', title='User name', required='')
+          tr
+            td
+              label
+                | Type of job: 
+                td
+                  input#typeOfJob(type='text', title="Type of job", require="")
+          
+          tr
+            td
+              label
+                | Job description:
+                td
+                  input#jobDescription(type='text', title='Job description', required='')
+          tr
+            td
+              label
+                | Minimum tradie rating:
+                td
+                  input#rating(type='numeric', min='0', max='5', title='Job rating', require='')
+      
