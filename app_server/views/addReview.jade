@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  
+#banner.page-header
+  .row
+    .col-md-6.col-sm-12
+      h1 Add a review of your tradie and share your experiences of how well they worked!
+      form#SubmitReview
+        table
+          tr
+            td
+              label
+                | Tradie's username:
+                td
+                  input#userName(type='text', title='User name', required='')
+          tr
+            td
+              label
+                | Job description:
+                td
+                  input#jobDescription(type='text', title='Job description', required='')
+          tr
+            td
+              label
+                | Job rating:
+                td
+                  input#rating(type='numeric', min='0', max='5', title='Job rating', require='')
+          
+          tr
+            td
+              label
+                | Give an optional review:
+                td
+                  textarea#tradieReview(type='text', rows='10', placeholder='Give an optional review')
+          tr
+            td
+              input(type='submit', name='login', value='Login', title='Login to this site!')
+
+            
