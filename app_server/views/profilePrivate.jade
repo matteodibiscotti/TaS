@@ -1,6 +1,7 @@
 extends layout
 
 block content
+  
   #banner.page-header
     .row
       .col-md-6.col-sm-12
@@ -9,6 +10,29 @@ block content
 
 
       .col-md-6.col-sm-12
+        form.form-horizontal(action='')
+          .form-group
+            label.control-label.col-sm-2(for='realname') Real name
+            .col-sm-10
+              input#email.form-control(type='text', name='Real name', require)
+          .form-group
+              label.control-label.col-sm-2(for='username') User name
+              .col-sm-10
+                input#email.form-control(type='text', name='User name', require)        
+          .form-group
+            label.control-label.col-sm-2(for='email') E-mail
+            .col-sm-10
+              input#email.form-control(type='email', name='e-mail', require)         
+          .form-group
+            label.control-label.col-sm-2(for='password') Password
+            .col-sm-10
+              input#email.form-control(type='password', name='password', require)       
+          .form-group
+            label.control-label.col-sm-2(for='confirmPassword') Confirm password
+            .col-sm-10
+              input#email.form-control(type='password', name='confirmPasswordpassword', require)      
+    
+        
         form(name="TradiePrivateInfo", value="submit", validate)
           table
             tr
@@ -54,11 +78,20 @@ block content
                   td
                     input#address(type='text', title='Address', require='')
             tr
-              td
+
                 label
-                  | Services
-                  td
-                    input#services(type='text', title='Services', require='')
+                
+                  select#trade(onchange='ChangeServiceList()')
+                    option(selected='', value='Default') Please select trade
+                    option(value='Plumber') Plumber
+                    option(value='Electrician') Electrician
+                    option(value='Carpenter') Carpenter
+                    option(value='AC/Refrigeration') AC/Refrigeration
+                    option(value='Gardening/Landscaping') Gardening/Landscaping
+                    option(value='Labourer') Labourer     
+                    li
+                  label Service
+                    select#service 
             tr
               td
                 label
@@ -68,4 +101,5 @@ block content
             tr
               td
                 input#privateInfoUpdate(type='submit', value='Update your details ')
-        
+  
+          script(src='/public/javascripts/DynamicForm.js')      
