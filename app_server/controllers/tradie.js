@@ -12,3 +12,8 @@ res.render('profilePublic', { title: 'Public Profile' });
 module.exports.addReview = function(req, res){
 res.render('addReview', { title: 'Add Review' });
 };
+
+/* GET tradie signup form page */
+module.exports.tradieSignup = function(req, res){
+res.render('tradieSignup', { title: 'Add Review' });
+};

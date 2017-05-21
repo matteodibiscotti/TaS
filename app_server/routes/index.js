@@ -13,10 +13,12 @@ router.get('/welcome', ctrlOthers.welcome);
 /* GET User pages. */
 router.get('/user/results', ctrlUser.searchResults);
 router.get('/user/search/new', ctrlUser.newSearch);
+router.get('/user/signup/new', ctrlUser.userSignup);
 
 /* GET Tradie pages. */
 router.get('/tradie/profile/private', ctrlTradie.profilePrivate);
 router.get('/tradie/profile/public', ctrlTradie.profilePublic);
 router.get('/tradie/review/new', ctrlTradie.addReview);
+router.get('/tradie/signup/new', ctrlTradie.tradieSignup);
 
 module.exports = router;

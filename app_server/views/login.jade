@@ -3,53 +3,21 @@ extends layout
 block content
   #banner.page-header
     .row     
-      .col-md-6.col-sm-12
-        h1 Log in as a tradie
-          form#LoginTradie
-       .form-inline
-         .form-group
-           span.label User Name:
-           input(type="text", id="username")
-         .form-group
-           span.label Password:
-           input(type="text", id="pw")
-
-
-//-        form#LoginClient
-          table
-            tr
-              td
-                label
-                  | User Name:
-                  td
-                    input#user(type='text', title='User name', required='')
-            tr
-              td
-                label
-                  | Password:
-                  td
-                    input#password(type='password', title='Password', required='')
-            tr
-              td
-                input(type='submit', name='login', value='Login', title='Login to this site!')
-    
-    
-    
-//-    .col-md-6.col-sm-12
-      h1 Log in as a tradie
-        form#LoginTradie
-          tr
-            td
-              label
-                | User Name:
-                td
-                  input#user(type='text', title='User name', required='')
-          tr
-            td
-              label
-                | Password:
-                td
-                  input#password(type='password', title='Password', required='')
-          tr
-            td
-              input(type='submit', name='login', value='Login', title='Login to this site!')
+        h1.text-center Welcome to Trades and Services
+    .row
+      .col.text-center
+        .btn-group.btn-group-justified
+          a.btn.btn-default.btn-lg(href="/tradie/signup/new") Sign Up: Tradesman
+          a.btn.btn-default.btn-lg(href="/user/signup/new") Sign Up: User
+    .row
+      h2.text-center Already a Member?
+    .row
+      .col.text-center
+        .form-inline
+          .form-group
+            span.label.login.form-font User Name:
+            input.input-lg(type="text", id="username")
+          .form-group
+            span.label.login.form-font Password:
+            input.input-lg.login.form-btn-space(type="text", id="pw")
+          .btn.btn-default.btn-lg Submit

@@ -4,12 +4,12 @@ block content
   #banner.page-header
     .row
       .col-md-6.col-sm-12
-        h1 This has your personal information as a tradie. Any updates you make will be implemented immediately.
-        a(href='/welcome', title:'Return to the homepage') Return to the homepage
+        p This has your personal information as a tradie. Any updates you make will be implemented immediately.
+        p These updates will affect the results of your search queries, and what will be displayed on your public profile.
 
 
       .col-md-6.col-sm-12
-        form#TradiePrivateInfo
+        form(name="TradiePrivateInfo", value="submit", validate)
           table
             tr
               td 
@@ -23,6 +23,12 @@ block content
                   | User Name
                   td
                     input#userName(type='text', title='User name', require='')
+            tr
+              td
+                label
+                  | E-mail address
+                  td
+                    input#tradieEmail(type='email', title='E-mail', require='')
             tr
               td
                 label
@@ -59,5 +65,7 @@ block content
                   | Distance willing to travel
                   td
                     input#distance(type='numeric', title='Distance', require='')
-            
+            tr
+              td
+                input#privateInfoUpdate(type='submit', value='Update your details ')
         
