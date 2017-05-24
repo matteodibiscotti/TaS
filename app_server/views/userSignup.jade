@@ -4,7 +4,7 @@ block content
   #banner.page-header
     .container
       h2 Please enter your details below to register as a user
-      form.form-horizontal(action='/action_page.php', style='padding-top: 10px;')
+      form.form-horizontal(action='/api/user/signup/new', method='POST', style='padding-top: 10px;')
         fieldset
           legend Registration Details
           .form-group
