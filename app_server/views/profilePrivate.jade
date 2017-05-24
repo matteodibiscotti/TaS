@@ -1,105 +1,87 @@
 extends layout
 
 block content
-  
   #banner.page-header
-    .row
-      .col-md-6.col-sm-12
-        p This has your personal information as a tradie. Any updates you make will be implemented immediately.
-        p These updates will affect the results of your search queries, and what will be displayed on your public profile.
+    .container
+      .row
+        h1 make so can see current info here
+      .row(style='padding-top: 10px;')
+        .col-md-4.col-sm-12
+          p This has your personal information as a tradie. Any updates you make will be implemented immediately.
+          p These updates will affect the results of your search queries, and what will be displayed on your public profile.
 
-
-      .col-md-6.col-sm-12
-        form.form-horizontal(action='')
-          .form-group
-            label.control-label.col-sm-2(for='realname') Real name
-            .col-sm-10
-              input#email.form-control(type='text', name='Real name', require)
-          .form-group
-              label.control-label.col-sm-2(for='username') User name
-              .col-sm-10
-                input#email.form-control(type='text', name='User name', require)        
-          .form-group
-            label.control-label.col-sm-2(for='email') E-mail
-            .col-sm-10
-              input#email.form-control(type='email', name='e-mail', require)         
-          .form-group
-            label.control-label.col-sm-2(for='password') Password
-            .col-sm-10
-              input#email.form-control(type='password', name='password', require)       
-          .form-group
-            label.control-label.col-sm-2(for='confirmPassword') Confirm password
-            .col-sm-10
-              input#email.form-control(type='password', name='confirmPasswordpassword', require)      
-    
-        
-        form(name="TradiePrivateInfo", value="submit", validate)
-          table
-            tr
-              td 
-                label
-                  | Real Name
-                  td
-                   input#realName(type='text', title='Real name', required='')
-            tr
-              td
-                label
-                  | User Name
-                  td
-                    input#userName(type='text', title='User name', require='')
-            tr
-              td
-                label
-                  | E-mail address
-                  td
-                    input#tradieEmail(type='email', title='E-mail', require='')
-            tr
-              td
-                label
-                  | Password
-                  td
-                    input#password(type='password', title='Enter a password', require='')
-            tr
-              td
-                label
-                  | Password
-                  td
-                    input#confirmPassword(type='password', title='Confirm your password', require='')            
-            tr
-              td
-                label
-                  | Suburb
-                  td
-                    input#suburb(type='text', title='Suburb', require='')
-            tr
-              td
-                label
-                  | Address
-                  td
-                    input#address(type='text', title='Address', require='')
-            tr
-
-                label
-                
-                  select#trade(onchange='ChangeServiceList()')
-                    option(selected='', value='Default') Please select trade
+        .col-md-8.col-sm-12
+          form.form-horizontal(action='/action_page.php', validate)
+            fieldset
+              legend Business Information
+              .form-group
+                label.control-label.col-sm-2(for='businessname') Business Name
+                .col-sm-10
+                  input#email.form-control(type='text', name='Business name', placeholder='Enter Your New Business Name', require)
+              .form-group
+                label.control-label.col-sm-2(for='abn') ABN
+                .col-sm-10
+                  input#email.form-control(type='text', name='abn', placeholder='Enter Your New Australian Business Number', require)
+            fieldset
+              legend Contact and Login        
+              .form-group
+                label.control-label.col-sm-2(for='email') Email
+                .col-sm-10
+                  input#email.form-control(type='email', name='e-mail', placeholder='Enter Your New Email Address', require)         
+              .form-group
+                label.control-label.col-sm-2(for='password') Password
+                .col-sm-10
+                  input#email.form-control(type='password', name='password', placeholder='Enter Your Current Password', require)
+              .form-group
+                label.control-label.col-sm-2(for='password') New Password
+                .col-sm-10
+                  input#email.form-control(type='password', name='newPassword', placeholder='Enter Your New Password', require)       
+              .form-group
+                label.control-label.col-sm-2(for='confirmPassword') Confirm New Password
+                .col-sm-10
+                  input#email.form-control(type='password', name='confirmNewPassword', placeholder='Re-enter Your New Password', require)
+            fieldset
+              legend Business Address
+              .form-group
+                label.control-label.col-sm-2(for='unitNumber') Unit Number:
+                .col-sm-10
+                  input#email.form-control(type='text', name='unitNumber')
+              .form-group
+                label.control-label.col-sm-2(for='streetNumber') Street Number:
+                .col-sm-10
+                  input#email.form-control(type='text', name='streetNumber')
+              .form-group
+                label.control-label.col-sm-2(for='streetName') Street Name:
+                .col-sm-10
+                  input#email.form-control(type='text', name='streetName')
+              .form-group
+                label.control-label.col-sm-2(for='postcode') Postcode:
+                .col-sm-10
+                  input#email.form-control(type='text', name='postcode')
+            fieldset
+              legend Business Operation
+              .form-group
+                label.control-label.col-sm-2(for='distance') Working Distance
+                .col-sm-10
+                  input#email.form-control(type='numeric', min='0', name='distance', placeholder='In Kilometers', require)
+              .form-group
+                label.control-label.col-sm-2(for='trade') Expertise
+                .col-sm-10
+                  select#email.form-control(required='true')
+                    option(selected disabled) Select your trade
                     option(value='Plumber') Plumber
                     option(value='Electrician') Electrician
                     option(value='Carpenter') Carpenter
                     option(value='AC/Refrigeration') AC/Refrigeration
                     option(value='Gardening/Landscaping') Gardening/Landscaping
-                    option(value='Labourer') Labourer     
-                    li
-                  label Service
-                    select#service 
-            tr
-              td
-                label
-                  | Distance willing to travel
-                  td
-                    input#distance(type='numeric', title='Distance', require='')
-            tr
-              td
-                input#privateInfoUpdate(type='submit', value='Update your details ')
-  
-          script(src='/public/javascripts/DynamicForm.js')      
+                    option(value='Labourer') Labourer
+    
+           
+          
+            .form-group
+              .col-sm-12
+                input#email.form-control(type='submit', value='Submit')
+
+
+    
+            script(src='/javascripts/DynamicForm.js')      

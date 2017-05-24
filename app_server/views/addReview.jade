@@ -1,41 +1,28 @@
 extends layout
 
 block content
-  
-  #banner.page-header
-
-    .row
-      .col-md-6.col-sm-12
-        h1 Add a review of your tradie and share your experiences of how well they worked!
-        form#SubmitReview(name = "Submit Review", value = 'submit', validate)
-          table
-            tr
-              td
-                label
-                  | Tradie's username:
-                  td
-                    input#userName(type='text', title='User name', required='')
-            tr
-              td
-                label
-                  | Job description:
-                  td
-                    input#jobDescription(type='text', title='Job description', required='')
-            tr
-              td
-                label
-                  | Job rating:
-                  td
-                    input#rating(type='numeric', min='0', max='5', title='Job rating', require='')
-            
-            tr
-              td
-                label
-                  | Give an optional review:
-                  td
-                    textarea#tradieReview(type='text', rows='10', placeholder='Give an optional review')
-            tr
-              td
-                input(type='submit', name='review', value='Submit your review!', title='Submit your review!')
-
-              
+  .row.page-header
+    .col-lg-12
+      h1 Review
+  .row
+    .col-xs-12.col-md-10
+      form.form-horizontal(action="/location", method="get", role="form")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="name") Your Name
+          .col-xs-12.col-sm-10
+            input#name.form-control(name="name")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="rating") Rating
+          .col-xs-12.col-sm-2
+            select#rating.form-control.input-sm(name="rating")
+              option 5
+              option 4
+              option 3
+              option 2
+              option 1
+        .form-group
+          label.col-sm-2.control-label(for="review") Review
+          .col-sm-10
+            textarea#review.form-control(name="review", rows="5")
+        button.btn.btn-default.pull-right Add my review
+    .col-xs-12.col-md-4

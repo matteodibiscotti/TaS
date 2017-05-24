@@ -13,7 +13,7 @@ block content
       h2.text-center Already a Member?
     .row
       .col.text-center
-        .form-inline
+        .form-inline(action='/user/search/new', method='post')
           .form-group
             span.label.login.form-font User Name:
             input.input-lg(type="text", id="username")
