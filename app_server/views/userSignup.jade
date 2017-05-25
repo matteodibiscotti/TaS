@@ -4,7 +4,7 @@ block content
   #banner.page-header
     .container
       h2 Please enter your details below to register as a user
-      form.form-horizontal(action='/api/user/signup/new', method='POST', style='padding-top: 10px;')
+      form.form-horizontal(action='/register', method='post', style='padding-top: 10px;')
         fieldset
           legend Registration Details
           .form-group
@@ -16,17 +16,9 @@ block content
             .col-sm-10
               input#email.form-control(type='email', placeholder='Enter email', name='email')
           .form-group
-            label.control-label.col-sm-2(for='confemail') Confirm email:
+            label.control-label.col-sm-2(for='password') Choose a password:
             .col-sm-10
-              input#email.form-control(type='email', placeholder='Re-enter your email address', name='confemail')
-          .form-group
-            label.control-label.col-sm-2(for='pwd') Choose a password:
-            .col-sm-10
-              input#pwd.form-control(type='password', placeholder='Enter password', name='pwd')
-          .form-group
-            label.control-label.col-sm-2(for='confpwd') Confirm password:
-            .col-sm-10
-              input#pwd.form-control(type='password', placeholder='Re-enter your password', name='confpwd')
+              input#pwd.form-control(type='password', placeholder='Enter password', name='password')
         fieldset
           legend Your Address
           .form-group

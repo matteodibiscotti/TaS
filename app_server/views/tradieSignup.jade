@@ -4,7 +4,7 @@ block content
   #banner.page-header
     .container
       h2 Please enter your details below to register as a Tradesman
-      form.form-horizontal(action='/action_page.php', style='padding-top: 10px;')
+      form.form-horizontal(action='/register', method='post', style='padding-top: 10px;')
         fieldset
           legend Business Information
           .form-group
@@ -40,17 +40,9 @@ block content
             .col-sm-10
               input#email.form-control(type='email', placeholder='Enter email', name='email')
           .form-group
-            label.control-label.col-sm-2(for='confemail') Confirm email:
-            .col-sm-10
-              input#email.form-control(type='email', placeholder='Re-enter your email address', name='confemail')
-          .form-group
             label.control-label.col-sm-2(for='pwd') Choose a password:
             .col-sm-10
               input#pwd.form-control(type='password', placeholder='Enter password', name='pwd')
-          .form-group
-            label.control-label.col-sm-2(for='confpwd') Confirm password:
-            .col-sm-10
-              input#pwd.form-control(type='password', placeholder='Re-enter your password', name='confpwd')
         fieldset
           legend Check the trades which you will offer services for
           .form-group

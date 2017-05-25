@@ -21,4 +21,52 @@ router.get('/tradie/profile/public', ctrlTradie.profilePublic);
 router.get('/tradie/review/new', ctrlTradie.addReview);
 router.get('/tradie/signup/new', ctrlTradie.tradieSignup);
 
+// passportjs stuff
+var passport = require('passport');
+var Account = require('../models/account');
+
+
+router.get('/index', function (req, res) {
+    res.render('index', { user : req.user });
+});
+
+router.get('/register', function(req, res) {
+    res.render('register', { });
+});
+
+router.post('/register', function(req, res, next) {
+    Account.register(new Account({ username : req.body.username }), req.body.password, function(err, account) {
+        if (err) {
+          return res.render('userSignup', { error : err.message });
+        }
+
+        passport.authenticate('local')(req, res, function () {
+            req.session.save(function (err) {
+                if (err) {
+                    return next(err);
+                }
+                res.redirect('/index');
+            });
+        });
+    });
+});
+
+
+router.get('/login', function(req, res) {
+    res.render('login', { user : req.user });
+});
+
+router.post('/login', passport.authenticate('local'), function(req, res) {
+    res.redirect('/index');
+});
+
+router.get('/logout', function(req, res) {
+    req.logout();
+    res.redirect('/');
+});
+
+router.get('/ping', function(req, res){
+    res.status(200).send("pong!");
+});
+
 module.exports = router;

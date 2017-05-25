@@ -13,11 +13,14 @@ block content
       h2.text-center Already a Member?
     .row
       .col.text-center
-        .form-inline(action='/user/search/new', method='post')
+        form.form-inline(role='form', action='/login', method='post')
           .form-group
             span.label.login.form-font User Name:
-            input.input-lg(type="text", id="username")
+            input.form-control.input-lg(type="text", name="username")
           .form-group
             span.label.login.form-font Password:
-            input.input-lg.login.form-btn-space(type="text", id="pw")
-          .btn.btn-default.btn-lg Submit
+            input.form-control.input-lg.login.form-btn-space(type="password", name="password")
+          &nbsp;
+          a(href='/index')
+            button.btn.btn-default.btn-lg(type="submit") Submit
+          

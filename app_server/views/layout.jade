@@ -6,6 +6,10 @@ html
     link(rel='stylesheet', href='/bootstrap/css/solar.bootstrap.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    if (error && error.length > 0)
+      br
+      h4.error-msg= error
+      br
     .navbar.navbar-default.navbar-fixed-top
       .container
         .navbar-header
